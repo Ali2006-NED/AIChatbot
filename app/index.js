@@ -41,7 +41,7 @@ async function sendMessage() {
   chatMessagesEl.appendChild(spinner);
 
   try {
-    const response = await fetch("http://localhost:3000/message", {
+    const response = await fetch("/api/message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

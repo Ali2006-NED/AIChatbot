@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.post("/message", async (req, res) => {
+app.post("/api/message", async (req, res) => {
   try {
     const userPrompt = req.body.prompt;
 
@@ -40,6 +40,6 @@ app.post("/message", async (req, res) => {
   }
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 module.exports = app;
 
