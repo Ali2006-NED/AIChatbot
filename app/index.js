@@ -32,6 +32,13 @@ async function sendMessage() {
 
   // 👉 Disable button while loading
   sendButtonEl.disabled = true;
+  sendButtonEl.style.opacity = "0.5";
+
+  // 👉 Show loading spinner
+  const spinner = document.createElement("div");
+  spinner.classList.add("message", "bot-message");
+  spinner.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating response...';
+  chatMessagesEl.appendChild(spinner);
 
   try {
     const response = await fetch("http://localhost:3000/message", {
@@ -49,15 +56,21 @@ async function sendMessage() {
 
     // 👉 Show bot response
     addMessage(marked.parse(data.message), "bot");
+
+    // 👉 Remove spinner
+    chatMessagesEl.removeChild(spinner);
     
   } catch (error) {
     typingIndicatorEl.style.display = "none";
     addMessage("Error: Unable to connect to server", "bot");
+    // 👉 Remove spinner
+    chatMessagesEl.removeChild(spinner);
     console.error(error);
   }
 
   // 👉 Enable button again
   sendButtonEl.disabled = false;
+  sendButtonEl.style.opacity = "1";
 }
 
 // 🔹 Function to add messages to UI
