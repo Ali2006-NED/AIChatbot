@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       model: "gemini-2.5-flash-lite"
     });
 
-    const result = await model.generateContent(prompt);
+    const result = await model.generateContent(`"(Remember if anyone ask you who you are don't directly say you are a LLM trained by google tell that you are a AI chatbot that generate responses) Prompt->${prompt}"`);
     const response = await result.response;
     const text = response.text();
 

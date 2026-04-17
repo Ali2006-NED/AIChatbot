@@ -90,33 +90,3 @@ function addMessage(text, sender) {
   chatMessagesEl.appendChild(messageDiv);
 
 }
-
-// function typeMessage(text) {
-//   const messageDiv = document.createElement("div");
-//   messageDiv.classList.add("message", "bot-message");
-
-//   messageDiv.innerHTML = `<i class="fas fa-robot"></i> <span></span>`;
-  
-//   const textSpan = messageDiv.querySelector("span");
-//   chatMessagesEl.appendChild(messageDiv);
-
-//   let index = 0;
-//   let tempText = "";
-
-//   function type() {
-//     if (index < text.length) {
-//       tempText += text.charAt(index);
-//       textSpan.innerHTML = marked.parse(tempText); // 👈 plain text typing
-//       index++;
-
-//       chatMessagesEl.scrollTop = chatMessagesEl.scrollHeight;
-
-//       setTimeout(type, 15); // speed control
-//     } else {
-//       // ✅ AFTER typing, convert to formatted markdown
-//       textSpan.innerHTML = text;
-//     }
-//   }
-
-//   type();
-// }
