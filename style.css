@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Google Sans', Arial, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     margin: 0;
     padding: 0;
@@ -17,6 +17,7 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     overflow: hidden;
     backdrop-filter: blur(10px);
+    
 }
 
 .chat-header {
@@ -44,6 +45,7 @@ body {
     padding: 12px 18px;
     border-radius: 18px;
     max-width: 70%;
+    width: fit-content;
     word-wrap: break-word;
     animation: fadeIn 0.3s ease-in;
 }
@@ -57,7 +59,7 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     margin-left: auto;
-    text-align: right;
+    text-align: justify;
 }
 
 .bot-message {
@@ -142,3 +144,8 @@ body {
         height: 300px;
     }
 }
+
+
+
+
+
