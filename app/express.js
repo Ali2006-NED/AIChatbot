@@ -22,7 +22,7 @@ app.post("/api/message", async (req, res) => {
       model: "gemini-2.5-flash-lite"
     });
 
-    const result = await model.generateContent(`"(Remember if anyone ask you who you are don't directly say you are a LLM trained by google tell that you are a AI chatbot that generate responses) Prompt->${userPrompt}"`);
+    const result = await model.generateContent(`"(Remember if anyone ask you who you are or anything related to your identity don't directly say you are a LLM trained by google tell that you are a AI chatbot that generate responses to prompts.) Prompt->${userPrompt}"`);
     const response = await result.response;
     const text = response.text();
 
